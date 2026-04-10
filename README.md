@@ -30,8 +30,8 @@
 
 <table>
   <tr>
-    <td align="center" width="35%">
-      <img src="./codingdora.png" alt="Coding Doraemon" width="260" />
+    <td align="center" width="40%">
+      <img src="./codingdora.png" alt="Coding Doraemon" width="100" />
     </td>
     <td align="center" width="65%">
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=bluedstar&" alt="bluedstar streak" />
