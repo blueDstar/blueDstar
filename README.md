@@ -53,11 +53,8 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=git,python,cpp,c,vscode,react,vite,nodejs,mongodb,mysql,postgres,figma,arduino,raspberrypi,linux,ubuntu,tensorflow,docker,pytorch&perline=10" />
-
-<br><br>
-
-<a href="https://www.mathworks.com/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="matlab" width="40" height="40"/> </a><a href="https://www.qt.io/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Qt_logo_2016.svg" alt="qt" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a>
+<img src="https://skillicons.dev/icons?i=git,python,cpp,c,vscode,react,vite,nodejs,mongodb,mysql,postgres,figma,arduino,raspberrypi,linux,ubuntu,tensorflow,docker,pytorch,qt&perline=10" />
+<a href="https://www.mathworks.com/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="matlab" width="40" height="40"/> </a><a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a>
 
 </div>
 
