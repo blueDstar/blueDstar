@@ -1,34 +1,85 @@
-<h1 align="center">Sup , I'm Van Dat Nguyen</h1>
-<h3 align="center">A curious mind driven by the dream of building intelligent robots. Learning, creating, and sharing along the way.</h3>
+<!-- Cyberpunk Neon GitHub Profile README -->
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=bluedstar&label=Profile%20views&color=0e75b6&style=flat" alt="bluedstar" /> </p>
+<div align="center">
 
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:0f0c29,50:302b63,100:24243e&text=Sup,%20I'm%20Van%20Dat%20Nguyen&fontColor=39ff14&fontSize=38&fontAlignY=38&desc=A%20curious%20mind%20building%20intelligent%20robots&descAlignY=58&descSize=18" />
 
-- 🔭 I’m currently working on **Several robotics and AI projects focusing on control systems and intelligent behavior.**
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=00F5FF&center=true&vCenter=true&width=900&lines=Robotics+%7C+Embedded+Systems+%7C+AI;Learning%2C+creating%2C+and+sharing+along+the+way;Dreaming+of+building+a+real+Doraemon+someday)](https://git.io/typing-svg)
 
-- 🌱 I’m currently learning **robotics, embedded systems, and artificial intelligence.**
+<img src="https://komarev.com/ghpvc/?username=bluedstar&label=NEON%20VISITORS&color=blueviolet&style=for-the-badge" alt="bluedstar" />
 
-- 👯 I’m looking to collaborate on **robotics projects, especially those involving control systems and computer vision.**
+</div>
 
-- 👨‍💻 All of my projects are available at [https://github.com/blueDstar](https://github.com/blueDstar)
+---
 
-- 📫 How to reach me **datnvan.021504@gmail.com**
+## `> about_me.exe`
 
-- ⚡ Fun fact **I started learning robotics because I secretly want to build a real Doraemon someday.**
+<img align="right" alt="cyberpunk coding" width="320" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbG5xYTR5dnN4YzRwbWJtdTB1djFhNjd6aW9vZjN6cGN6NzJlaTBkbiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0HlQXlQ3nHyLMvte/giphy.gif"/>
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://kaggle.com/https://www.kaggle.com/bluedstar" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="https://www.kaggle.com/bluedstar" height="30" width="40" /></a>
-<a href="https://fb.com/https://www.facebook.com/vndat1524" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="https://www.facebook.com/vndat1524" height="30" width="40" /></a>
-<a href="https://instagram.com/https://www.instagram.com/rebert.vndat/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="https://www.instagram.com/rebert.vndat/" height="30" width="40" /></a>
-<a href="https://www.youtube.com/c/https://www.youtube.com/@sukirebert" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="https://www.youtube.com/@sukirebert" height="30" width="40" /></a>
-<a href="https://www.leetcode.com/https://leetcode.com/u/vandat/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="https://leetcode.com/u/vandat/" height="30" width="40" /></a>
-</p>
+- 🔭 I’m currently working on **several robotics and AI projects focusing on control systems and intelligent behavior**
+- 🌱 I’m currently learning **robotics, embedded systems, and artificial intelligence**
+- 👯 I’m looking to collaborate on **robotics projects, especially those involving control systems and computer vision**
+- 👨‍💻 All of my projects are available at **[github.com/blueDstar](https://github.com/blueDstar)**
+- 📫 How to reach me: **datnvan.021504@gmail.com**
+- ⚡ Fun fact: **I started learning robotics because I secretly want to build a real Doraemon someday**
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" alt="Git" title="Git" width="36" height="36" /></a><a href="https://www.python.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" alt="Python" title="Python" width="36" height="36" /></a><a href="https://docs.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/cplusplus-colored.svg" alt="C++" title="C++" width="36" height="36" /></a><a href="https://docs.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/c-colored.svg" alt="C" title="C" width="36" height="36" /></a><a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/visualstudiocode-colored.svg" alt="VS Code" title="VS Code" width="36" height="36" /></a><a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" alt="React" title="React" width="36" height="36" /></a><a href="https://www.mathworks.com/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="matlab" width="40" height="40"/> </a><a href="https://www.qt.io/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Qt_logo_2016.svg" alt="qt" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a><a href="https://vitejs.dev/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg" alt="Vite" title="Vite" width="36" height="36" /></a><a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" alt="NodeJS" title="NodeJS" width="36" height="36" /></a><a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg" alt="MongoDB" title="MongoDB" width="36" height="36" /></a><a href="https://www.mysql.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" alt="MySQL" title="MySQL" width="36" height="36" /></a><a href="https://www.postgresql.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/postgresql-colored.svg" alt="PostgreSQL" title="PostgreSQL" width="36" height="36" /></a><a href="https://www.figma.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg" alt="Figma" title="Figma" width="36" height="36" /></a><a href="https://store.arduino.cc/?gclid=Cj0KCQjw2eilBhCCARIsAG0Pf8uueBifykWcsSS4LPESeGQfxGVKJYnzV7bz471XfknQJy_1VINVWM8aAkLtEALw_wcB" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/arduino-colored.svg" alt="Arduino" title="Arduino" width="36" height="36" /></a><a href="https://www.raspberrypi.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/raspberrypi-colored.svg" alt="Raspberry Pi" title="Raspberry Pi" width="36" height="36" /></a><a href="https://www.linux.org" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/linux-colored.svg" alt="Linux" title="Linux" width="36" height="36" /></a><a href="https://ubuntu.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/ubuntu-colored.svg" alt="Ubuntu" title="Ubuntu" width="36" height="36" /></a><a href="https://www.tensorflow.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tensorflow-colored.svg" alt="TensorFlow" title="TensorFlow" width="36" height="36" /></a><a href="https://www.docker.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg" alt="Docker" title="Docker" width="36" height="36" /></a><a href="https://pytorch.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/pytorch-colored.svg" alt="PyTorch" title="PyTorch" width="36" height="36" /></a> </p>
+<br clear="right"/>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=bluedstar&" alt="bluedstar" /></p>
+---
+
+## `> connect_with_me`
+
+<div align="center">
+
+<a href="https://www.kaggle.com/bluedstar" target="_blank">
+  <img src="https://img.shields.io/badge/Kaggle-00F5FF?style=for-the-badge&logo=kaggle&logoColor=0A0A0A" alt="Kaggle" />
+</a>
+<a href="https://www.facebook.com/vndat1524" target="_blank">
+  <img src="https://img.shields.io/badge/Facebook-7A00FF?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
+</a>
+<a href="https://www.instagram.com/rebert.vndat/" target="_blank">
+  <img src="https://img.shields.io/badge/Instagram-FF2BD6?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+</a>
+<a href="https://www.youtube.com/@sukirebert" target="_blank">
+  <img src="https://img.shields.io/badge/YouTube-FF003C?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
+</a>
+<a href="https://leetcode.com/u/vandat/" target="_blank">
+  <img src="https://img.shields.io/badge/LeetCode-FFB000?style=for-the-badge&logo=leetcode&logoColor=0A0A0A" alt="LeetCode" />
+</a>
+
+</div>
+
+---
+
+## `> languages_and_tools`
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=git,python,cpp,c,vscode,react,vite,nodejs,mongodb,mysql,postgres,figma,arduino,raspberrypi,linux,ubuntu,tensorflow,docker,pytorch&perline=10" />
+
+<br><br>
+
+<img src="https://img.shields.io/badge/MATLAB-00F5FF?style=for-the-badge&logo=mathworks&logoColor=black" />
+<img src="https://img.shields.io/badge/Qt-39FF14?style=for-the-badge&logo=qt&logoColor=black" />
+<img src="https://img.shields.io/badge/scikit--learn-FF6EC7?style=for-the-badge&logo=scikitlearn&logoColor=black" />
+
+</div>
+
+---
+
+## `> github_activity`
+
+<div align="center">
+
+<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=bluedstar&theme=neon-dark&hide_border=true&stroke=00F5FF&ring=FF2BD6&fire=39FF14&currStreakLabel=00F5FF" alt="GitHub Streak" />
+
+</div>
+
+---
+
+## `> contribution_matrix`
+
+<div align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/blueDstar/blueDstar/output/pacman-contribution-graph-dark.svg">
@@ -36,6 +87,13 @@
   <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/blueDstar/blueDstar/output/pacman-contribution-graph.svg">
 </picture>
 
+</div>
 
+---
 
+<div align="center">
 
+```txt
+> SYSTEM STATUS: ONLINE
+> CORE MODE: LEARN • BUILD • EVOLVE
+> TARGET: INTELLIGENT ROBOTS
