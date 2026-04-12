@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=220&color=100:043a47,50:043a47,100:00F5FF&text=Sup,%20I'm%20Van%20Dat%20Nguyen&fontColor=C8FFFF&fontSize=38&fontAlignY=38&desc=A%20curious%20mind%20driven%20by%20the%20dream%20of%20building%20intelligent%20robots&descAlignY=58&descSize=18" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=220&color=100:00F5FF&text=Sup,%20I'm%20Van%20Dat%20Nguyen&fontColor=C8FFFF&fontSize=38&fontAlignY=38&desc=A%20curious%20mind%20driven%20by%20the%20dream%20of%20building%20intelligent%20robots&descAlignY=58&descSize=18" />
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=00F5FF&center=true&vCenter=true&width=900&lines=Robotics+%7C+Embedded+Systems+%7C+AI;Learning%2C+creating%2C+and+sharing+along+the+way;Code+the+future.+Build+the+machine.)](https://git.io/typing-svg)
 
