@@ -12,7 +12,7 @@
 
 ## `> ABOUT ME :3`
 
-<img align="right" alt="Doraemon" width="320" src="https://media.giphy.com/media/1Yw4BmHn8QNWD4Bl4l/giphy.gif]https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcThiaTJjaXd5OTJvbXdrYWxpeHZzdWRvcjU3MXUyNTRteWwxbm9xMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkaiB3DzDjzUCnZgJ6/giphy.gif"/>
+<img align="right" alt="Doraemon" width="320" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcThiaTJjaXd5OTJvbXdrYWxpeHZzdWRvcjU3MXUyNTRteWwxbm9xMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkaiB3DzDjzUCnZgJ6/giphy.gif"/>
 
 - 🔭 I’m currently working on **several robotics and AI projects focusing on control systems and intelligent behavior**
 - 🌱 I’m currently learning **robotics, embedded systems, and artificial intelligence**
