@@ -82,12 +82,3 @@
 </picture>
 
 </div>
-
----
-
-<div align="center">
-
-```txt
-> SYSTEM STATUS: ONLINE
-> CORE MODE: LEARN • BUILD • EVOLVE
-> TARGET: INTELLIGENT ROBOTS
