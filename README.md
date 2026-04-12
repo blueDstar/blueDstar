@@ -30,19 +30,19 @@
 <div align="center">
 
 <a href="https://www.kaggle.com/bluedstar" target="_blank">
-  <img src="https://img.shields.io/badge/Kaggle-00F5FF?style=for-the-badge&logo=kaggle&logoColor=0A0A0A" alt="Kaggle" />
+  <img src="https://img.shields.io/badge/Kaggle-00F5FF?style=for-the-badge&logo=kaggle" alt="Kaggle" />
 </a>
 <a href="https://www.facebook.com/vndat1524" target="_blank">
-  <img src="https://img.shields.io/badge/Facebook-7A00FF?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
+  <img src="https://img.shields.io/badge/Facebook-7A00FF?style=for-the-badge&logo=facebook" alt="Facebook" />
 </a>
 <a href="https://www.instagram.com/rebert.vndat/" target="_blank">
-  <img src="https://img.shields.io/badge/Instagram-FF2BD6?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  <img src="https://img.shields.io/badge/Instagram-FF2BD6?style=for-the-badge&logo=instagram" alt="Instagram" />
 </a>
 <a href="https://www.youtube.com/@sukirebert" target="_blank">
-  <img src="https://img.shields.io/badge/YouTube-FF003C?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
+  <img src="https://img.shields.io/badge/YouTube-FF003C?style=for-the-badge&logo=youtube" alt="YouTube" />
 </a>
 <a href="https://leetcode.com/u/vandat/" target="_blank">
-  <img src="https://img.shields.io/badge/LeetCode-FFB000?style=for-the-badge&logo=leetcode&logoColor=0A0A0A" alt="LeetCode" />
+  <img src="https://img.shields.io/badge/LeetCode-FFB000?style=for-the-badge&logo=leetcode" alt="LeetCode" />
 </a>
 
 </div>
