@@ -4,15 +4,15 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=00F5FF&center=true&vCenter=true&width=900&lines=Robotics+%7C+Embedded+Systems+%7C+AI;Learning%2C+creating%2C+and+sharing+along+the+way;Code+the+future.+Build+the+machine.)](https://git.io/typing-svg)
 
-<img src="https://komarev.com/ghpvc/?username=bluedstar&label=Profile%20Viewers&color=00c8ff&style=for-the-badge" alt="bluedstar" />
+<img src="https://komarev.com/ghpvc/?username=bluedstar&label=Profile%20Views&color=00c8ff&style=for-the-badge" alt="bluedstar" />
 
 </div>
 
 ---
 
-## `> about_me.exe`
+## `> ABOUT ME :3`
 
-<img align="right" alt="neon robot" width="320" src="https://media.giphy.com/media/1Yw4BmHn8QNWD4Bl4l/giphy.gif"/>
+<img align="right" alt="Doraemon" width="320" src="https://media.giphy.com/media/1Yw4BmHn8QNWD4Bl4l/giphy.gif"/>
 
 - 🔭 I’m currently working on **several robotics and AI projects focusing on control systems and intelligent behavior**
 - 🌱 I’m currently learning **robotics, embedded systems, and artificial intelligence**
