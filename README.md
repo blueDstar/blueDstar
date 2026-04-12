@@ -49,7 +49,7 @@
 
 ---
 
-## `> languages_and_tools`
+## `>LANGUAGES AND TOOLS`
 
 <div align="center">
 
@@ -61,7 +61,7 @@
 
 ---
 
-## `> github_activity`
+## `GITHUB ACTIVITY`
 
 <div align="center">
 
@@ -71,7 +71,7 @@
 
 ---
 
-## `> contribution_matrix`
+## `CONTRIBUTION MATRIX`
 
 <div align="center">
 
