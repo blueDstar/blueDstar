@@ -10,39 +10,39 @@
 
 ---
 
-## `> ABOUT ME :3`
+## `ABOUT ME `
 
 <img align="right" alt="Doraemon" width="320" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcThiaTJjaXd5OTJvbXdrYWxpeHZzdWRvcjU3MXUyNTRteWwxbm9xMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkaiB3DzDjzUCnZgJ6/giphy.gif"/>
 
-- 🔭 I’m currently working on **several robotics and AI projects focusing on control systems and intelligent behavior**
-- 🌱 I’m currently learning **robotics, embedded systems, and artificial intelligence**
-- 👯 I’m looking to collaborate on **robotics projects, especially those involving control systems and computer vision**
-- 👨‍💻 All of my projects are available at **[github.com/blueDstar](https://github.com/blueDstar)**
-- 📫 How to reach me: **datnvan.021504@gmail.com**
-- ⚡ Fun fact: **I started learning robotics because I secretly want to build a real Doraemon someday**
+-  I’m currently working on **several robotics and AI projects focusing on control systems and intelligent behavior**
+-  I’m currently learning **robotics, embedded systems, and artificial intelligence**
+-  I’m looking to collaborate on **robotics projects, especially those involving control systems and computer vision**
+-  All of my projects are available at **[github.com/blueDstar](https://github.com/blueDstar)**
+-  How to reach me: **datnvan.021504@gmail.com**
+-  Fun fact: **I started learning robotics because I secretly want to build a real Doraemon someday**
 
 <br clear="right"/>
 
 ---
 
-## `> connect_with_me`
+## `CONNECT WITH ME`
 
 <div align="center">
 
 <a href="https://www.kaggle.com/bluedstar" target="_blank">
-  <img src="https://img.shields.io/badge/Kaggle-00E5FF?style=for-the-badge&logo=kaggle&logoColor=001B22" alt="Kaggle" />
+  <img src="https://img.shields.io/badge/Kaggle-00F5FF?style=for-the-badge&logo=kaggle&logoColor=0A0A0A" alt="Kaggle" />
 </a>
 <a href="https://www.facebook.com/vndat1524" target="_blank">
-  <img src="https://img.shields.io/badge/Facebook-00D9FF?style=for-the-badge&logo=facebook&logoColor=001B22" alt="Facebook" />
+  <img src="https://img.shields.io/badge/Facebook-7A00FF?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
 </a>
 <a href="https://www.instagram.com/rebert.vndat/" target="_blank">
-  <img src="https://img.shields.io/badge/Instagram-00CCFF?style=for-the-badge&logo=instagram&logoColor=001B22" alt="Instagram" />
+  <img src="https://img.shields.io/badge/Instagram-FF2BD6?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
 </a>
 <a href="https://www.youtube.com/@sukirebert" target="_blank">
-  <img src="https://img.shields.io/badge/YouTube-00C2FF?style=for-the-badge&logo=youtube&logoColor=001B22" alt="YouTube" />
+  <img src="https://img.shields.io/badge/YouTube-FF003C?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
 </a>
 <a href="https://leetcode.com/u/vandat/" target="_blank">
-  <img src="https://img.shields.io/badge/LeetCode-00B7FF?style=for-the-badge&logo=leetcode&logoColor=001B22" alt="LeetCode" />
+  <img src="https://img.shields.io/badge/LeetCode-FFB000?style=for-the-badge&logo=leetcode&logoColor=0A0A0A" alt="LeetCode" />
 </a>
 
 </div>
