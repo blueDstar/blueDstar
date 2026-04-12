@@ -65,7 +65,7 @@
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=bluedstar&theme=neon-dark&hide_border=true&stroke=00F5FF&ring=00F5FF&fire=7DF9FF&currStreakLabel=00F5FF" alt="GitHub Streak" />
+<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=bluedstar&theme=cyber-streakglow&hide_border=false&border=00F5FF&stroke=00F5FF&ring=00F5FF&fire=7DF9FF&currStreakLabel=00F5FF&sideLabels=7DF9FF&dates=66F7FF" alt="GitHub Streak" />
 
 </div>
 
