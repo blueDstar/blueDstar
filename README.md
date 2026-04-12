@@ -53,7 +53,7 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=git,python,cpp,c,vscode,react,vite,nodejs,mongodb,mysql,postgres,figma,arduino,raspberrypi,linux,ubuntu,tensorflow,docker,pytorch&perline=10" />
+<img src="https://skillicons.dev/icons?i=git,python,cpp,c,vscode,react,vite,nodejs,mongodb,mysql,postgres,figma,arduino,raspberrypi,linux,ubuntu,tensorflow,docker,pytorch,mathworks,qt,scikitlearn&perline=10" />
 
 <br><br>
 
