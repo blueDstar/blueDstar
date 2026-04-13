@@ -10,7 +10,7 @@
 
 ---
 
-<h2 style="color:#00f5ff;">ABOUT ME</h2>
+## `ABOUT ME `
 
 <!-- <img align="right" alt="Doraemon" width="320" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcThiaTJjaXd5OTJvbXdrYWxpeHZzdWRvcjU3MXUyNTRteWwxbm9xMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tkaiB3DzDjzUCnZgJ6/giphy.gif"/> -->
 
