@@ -65,12 +65,8 @@
 
 <div align="center">
 
-<a href="https://github.com/bluedstar">
-  <img
-    width="70%"
-    src="https://streak-stats.demolab.com/?user=bluedstar&theme=cyber-streakglow&hide_border=false&border=00F5FF&stroke=00F5FF&ring=00F5FF&fire=7DF9FF&currStreakLabel=00F5FF&sideLabels=7DF9FF&dates=66F7FF"
-    alt="bluedstar GitHub Streak"
-  />
+<a href="https://git.io/streak-stats">
+  <img width="70%" src="./assets/streak.svg" alt="GitHub Streak" />
 </a>
 
 </div>
