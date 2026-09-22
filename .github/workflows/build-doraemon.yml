@@ -62,7 +62,7 @@ jobs:
           travel_steps = 45
 
           # thời gian mỗi frame (ms)
-          frame_duration = 65
+          frame_duration = 130
 
           # khoảng cách trên
           top_margin = 10
