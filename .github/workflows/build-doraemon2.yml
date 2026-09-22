@@ -259,18 +259,18 @@ jobs:
       - name: Verify generated GIF
         run: |
           ls -lh assets
-          test -f assets/doraemon-run.gif
+          test -f assets/doraemon-run2.gif
 
       - name: Commit generated animation
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add assets/doraemon-run.gif
+          git add assets/doraemon-run2.gif
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Update Doraemon animation"
+            git commit -m "Update Doraemon animation 2"
             git push
           fi
