@@ -1,118 +1,276 @@
-from PIL import Image, ImageSequence, ImageOps
-import os
+name: Build Doraemon Animation
 
-# ==============================
-# FILE PATHS
-# ==============================
-src_path = "assets/Doraemon.gif"
-out_path = "assets/doraemon-run2.gif"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "assets/Doraemon.gif"
+      - ".github/workflows/build-doraemon2.yml"
 
-if not os.path.exists(src_path):
-    raise FileNotFoundError(f"Cannot find source GIF: {src_path}")
+permissions:
+  contents: write
 
-# ==============================
-# ANIMATION SETTINGS
-# ==============================
-canvas_w = 1200
-canvas_h = 150
-doraemon_h = 125
-travel_steps = 55
-frame_duration = 150
-pause_ms = 1000
-pause_frames = max(1, pause_ms // frame_duration)
-top_margin = 10
-side_margin = 10
+jobs:
+  build-doraemon:
+    runs-on: ubuntu-latest
 
-# ==============================
-# LOAD SOURCE GIF
-# ==============================
-source = Image.open(src_path)
-source_frames = []
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-for frame in ImageSequence.Iterator(source):
-    frame = frame.convert("RGBA")
-    ratio = doraemon_h / frame.height
-    new_width = int(frame.width * ratio)
-    frame = frame.resize((new_width, doraemon_h), Image.Resampling.LANCZOS)
-    source_frames.append(frame)
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-if len(source_frames) == 0:
-    raise RuntimeError("Source GIF contains no frames.")
+      - name: Install Pillow
+        run: python -m pip install pillow
 
-sprite_w = source_frames[0].width
+      - name: Generate Doraemon animation
+        shell: bash
+        run: |
+          python - <<'PY'
+          from PIL import Image, ImageSequence, ImageOps
+          import os
 
-left_x = side_margin
-right_x = canvas_w - sprite_w - side_margin
+          # ==========================================
+          # FILES
+          # ==========================================
+          src_path = "assets/Doraemon.gif"
+          out_path = "assets/doraemon-run2.gif"
 
-# ==============================
-# POSITIONS
-# ==============================
-positions_right = [
-    int(left_x + (right_x - left_x) * i / (travel_steps - 1))
-    for i in range(travel_steps)
-]
+          if not os.path.exists(src_path):
+              raise FileNotFoundError(
+                  f"Source GIF not found: {src_path}"
+              )
 
-positions_left = list(reversed(positions_right[1:-1]))
+          # ==========================================
+          # SETTINGS
+          # ==========================================
+          canvas_w = 1200
+          canvas_h = 150
 
-def make_canvas(sprite, x):
-    canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
-    canvas.alpha_composite(sprite, (x, top_margin))
-    return canvas
+          doraemon_h = 125
 
-output_frames = []
-frame_index = 0
+          # More steps = smoother movement
+          travel_steps = 60
 
-# ==============================
-# LEFT -> RIGHT
-# ==============================
-for x in positions_right:
-    sprite = source_frames[frame_index % len(source_frames)]
-    output_frames.append(make_canvas(sprite, x))
-    frame_index += 1
+          # Larger = slower movement
+          frame_duration = 110
 
-# ==============================
-# PAUSE 1s AT RIGHT EDGE
-# ==============================
-right_pause_x = positions_right[-1]
-right_sprite = source_frames[(frame_index - 1) % len(source_frames)]
+          # Pause at each edge
+          pause_duration = 1000
 
-for _ in range(pause_frames):
-    output_frames.append(make_canvas(right_sprite, right_pause_x))
+          # Small pause while turning around
+          turn_duration = 180
 
-# ==============================
-# RIGHT -> LEFT (MIRROR)
-# ==============================
-for x in positions_left:
-    sprite = source_frames[frame_index % len(source_frames)]
-    sprite = ImageOps.mirror(sprite)
-    output_frames.append(make_canvas(sprite, x))
-    frame_index += 1
+          top_margin = 10
+          side_margin = 10
 
-# ==============================
-# PAUSE 1s AT LEFT EDGE
-# ==============================
-left_pause_x = positions_right[0]
-left_sprite = ImageOps.mirror(source_frames[(frame_index - 1) % len(source_frames)])
+          # ==========================================
+          # LOAD SOURCE GIF
+          # ==========================================
+          source = Image.open(src_path)
 
-for _ in range(pause_frames):
-    output_frames.append(make_canvas(left_sprite, left_pause_x))
+          source_frames = []
 
-# ==============================
-# SAVE GIF
-# ==============================
-output_frames[0].save(
-    out_path,
-    save_all=True,
-    append_images=output_frames[1:],
-    duration=frame_duration,
-    loop=0,
-    disposal=2,
-    optimize=True
-)
+          for frame in ImageSequence.Iterator(source):
+              frame = frame.convert("RGBA")
 
-print("================================")
-print("Doraemon animation generated!")
-print(f"Source : {src_path}")
-print(f"Output : {out_path}")
-print(f"Frames : {len(output_frames)}")
-print("================================")
+              ratio = doraemon_h / frame.height
+              new_width = int(frame.width * ratio)
+
+              frame = frame.resize(
+                  (new_width, doraemon_h),
+                  Image.Resampling.LANCZOS
+              )
+
+              source_frames.append(frame)
+
+          if not source_frames:
+              raise RuntimeError("Doraemon.gif contains no frames.")
+
+          sprite_w = max(frame.width for frame in source_frames)
+
+          left_x = side_margin
+          right_x = canvas_w - sprite_w - side_margin
+
+          # ==========================================
+          # POSITIONS
+          # ==========================================
+          positions_right = [
+              int(
+                  left_x
+                  + (right_x - left_x)
+                  * i
+                  / (travel_steps - 1)
+              )
+              for i in range(travel_steps)
+          ]
+
+          # Exclude both endpoints because they are
+          # added separately for pause/turn animation.
+          positions_left = list(
+              reversed(positions_right[1:-1])
+          )
+
+          output_frames = []
+          output_durations = []
+
+          frame_index = 0
+
+          def make_canvas(sprite, x):
+              canvas = Image.new(
+                  "RGBA",
+                  (canvas_w, canvas_h),
+                  (0, 0, 0, 0)
+              )
+
+              canvas.alpha_composite(
+                  sprite,
+                  (x, top_margin)
+              )
+
+              return canvas
+
+          # ==========================================
+          # LEFT -> RIGHT
+          # ==========================================
+          for x in positions_right:
+              sprite = source_frames[
+                  frame_index % len(source_frames)
+              ]
+
+              output_frames.append(
+                  make_canvas(sprite, x)
+              )
+
+              output_durations.append(frame_duration)
+
+              frame_index += 1
+
+          # ==========================================
+          # PAUSE AT RIGHT EDGE
+          # ==========================================
+          right_sprite = source_frames[
+              (frame_index - 1) % len(source_frames)
+          ]
+
+          output_frames.append(
+              make_canvas(right_sprite, right_x)
+          )
+
+          output_durations.append(pause_duration)
+
+          # ==========================================
+          # TURN TO FACE LEFT
+          # ==========================================
+          right_sprite_flipped = ImageOps.mirror(
+              right_sprite
+          )
+
+          output_frames.append(
+              make_canvas(
+                  right_sprite_flipped,
+                  right_x
+              )
+          )
+
+          output_durations.append(turn_duration)
+
+          # ==========================================
+          # RIGHT -> LEFT
+          # ==========================================
+          for x in positions_left:
+              sprite = source_frames[
+                  frame_index % len(source_frames)
+              ]
+
+              sprite = ImageOps.mirror(sprite)
+
+              output_frames.append(
+                  make_canvas(sprite, x)
+              )
+
+              output_durations.append(frame_duration)
+
+              frame_index += 1
+
+          # ==========================================
+          # ARRIVE AT LEFT EDGE
+          # ==========================================
+          left_sprite = source_frames[
+              frame_index % len(source_frames)
+          ]
+
+          left_sprite = ImageOps.mirror(
+              left_sprite
+          )
+
+          output_frames.append(
+              make_canvas(left_sprite, left_x)
+          )
+
+          output_durations.append(pause_duration)
+
+          # ==========================================
+          # TURN TO FACE RIGHT
+          # ==========================================
+          left_sprite_normal = ImageOps.mirror(
+              left_sprite
+          )
+
+          output_frames.append(
+              make_canvas(
+                  left_sprite_normal,
+                  left_x
+              )
+          )
+
+          output_durations.append(turn_duration)
+
+          # ==========================================
+          # SAVE
+          # ==========================================
+          output_frames[0].save(
+              out_path,
+              save_all=True,
+              append_images=output_frames[1:],
+              duration=output_durations,
+              loop=0,
+              disposal=2,
+              optimize=True
+          )
+
+          print("")
+          print("===================================")
+          print("Doraemon animation generated")
+          print("===================================")
+          print(f"Source: {src_path}")
+          print(f"Output: {out_path}")
+          print(f"Frames: {len(output_frames)}")
+          print(f"Move frame: {frame_duration} ms")
+          print(f"Pause: {pause_duration} ms")
+          print("===================================")
+          PY
+
+      - name: Verify generated GIF
+        run: |
+          ls -lh assets
+          test -f assets/doraemon-run.gif
+
+      - name: Commit generated animation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add assets/doraemon-run.gif
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update Doraemon animation"
+            git push
+          fi
