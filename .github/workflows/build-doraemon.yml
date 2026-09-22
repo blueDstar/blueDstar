@@ -1,0 +1,124 @@
+name: Build Doraemon Animation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "assets/doraemon-source.gif"
+      - ".github/workflows/build-doraemon.yml"
+
+jobs:
+  build-gif:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Pillow
+        run: pip install pillow
+
+      - name: Generate doraemon-run.gif
+        run: |
+          python << 'PY'
+          from PIL import Image, ImageSequence, ImageOps
+          import os
+
+          src_path = "assets/doraemon-source.gif"
+          out_path = "assets/doraemon-run.gif"
+
+          # ===== Config =====
+          canvas_w = 1200       # chiều rộng thanh chạy
+          canvas_h = 140        # chiều cao vùng hiển thị
+          target_h = 120        # chiều cao Doraemon
+          steps_forward = 24    # số bước đi sang phải
+          step_duration = 70    # ms mỗi frame
+          top_margin = 10       # khoảng cách từ trên xuống
+          # ==================
+
+          src = Image.open(src_path)
+
+          # lấy tất cả frame từ gif gốc
+          raw_frames = []
+          durations = []
+          for fr in ImageSequence.Iterator(src):
+              rgba = fr.convert("RGBA")
+              raw_frames.append(rgba)
+              durations.append(fr.info.get("duration", step_duration))
+
+          if not raw_frames:
+              raise RuntimeError("No frames found in source gif.")
+
+          # resize toàn bộ frame
+          resized_frames = []
+          for fr in raw_frames:
+              ratio = target_h / fr.height
+              new_w = int(fr.width * ratio)
+              resized_frames.append(fr.resize((new_w, target_h), Image.LANCZOS))
+
+          sprite_w = resized_frames[0].width
+          max_x = max(0, canvas_w - sprite_w)
+
+          # quỹ đạo đi: trái -> phải -> trái
+          forward_positions = [int(max_x * i / (steps_forward - 1)) for i in range(steps_forward)]
+          backward_positions = list(reversed(forward_positions[1:-1]))
+
+          output_frames = []
+          output_durations = []
+
+          # helper lấy frame sprite theo index
+          def get_sprite(i, mirrored=False):
+              fr = resized_frames[i % len(resized_frames)]
+              if mirrored:
+                  fr = ImageOps.mirror(fr)
+              return fr
+
+          # đi sang phải: giữ nguyên hướng mặt sang phải
+          idx = 0
+          for x in forward_positions:
+              canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
+              sprite = get_sprite(idx, mirrored=False)
+              y = top_margin
+              canvas.alpha_composite(sprite, (x, y))
+              output_frames.append(canvas)
+              output_durations.append(step_duration)
+              idx += 1
+
+          # quay lại sang trái: mirror để quay mặt về trái
+          for x in backward_positions:
+              canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
+              sprite = get_sprite(idx, mirrored=True)
+              y = top_margin
+              canvas.alpha_composite(sprite, (x, y))
+              output_frames.append(canvas)
+              output_durations.append(step_duration)
+              idx += 1
+
+          # lưu gif
+          output_frames[0].save(
+              out_path,
+              save_all=True,
+              append_images=output_frames[1:],
+              duration=output_durations,
+              loop=0,
+              disposal=2,
+              transparency=0
+          )
+
+          print(f"Generated: {out_path}")
+          PY
+
+      - name: Commit generated gif
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/doraemon-run.gif
+          git commit -m "Generate Doraemon running animation" || exit 0
+          git push
