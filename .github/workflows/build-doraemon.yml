@@ -2,123 +2,218 @@ name: Build Doraemon Animation
 
 on:
   workflow_dispatch:
+
   push:
     paths:
-      - "assets/doraemon-source.gif"
+      - "assets/Doraemon.gif"
       - ".github/workflows/build-doraemon.yml"
 
+permissions:
+  contents: write
+
 jobs:
-  build-gif:
+  build-doraemon:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install Pillow
-        run: pip install pillow
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow
 
-      - name: Generate doraemon-run.gif
+      - name: Generate Doraemon running animation
         run: |
           python << 'PY'
           from PIL import Image, ImageSequence, ImageOps
           import os
 
-          src_path = "assets/doraemon-source.gif"
+          # ==============================
+          # FILE PATHS
+          # ==============================
+          src_path = "assets/Doraemon.gif"
           out_path = "assets/doraemon-run.gif"
 
-          # ===== Config =====
-          canvas_w = 1200       # chiều rộng thanh chạy
-          canvas_h = 140        # chiều cao vùng hiển thị
-          target_h = 120        # chiều cao Doraemon
-          steps_forward = 24    # số bước đi sang phải
-          step_duration = 70    # ms mỗi frame
-          top_margin = 10       # khoảng cách từ trên xuống
-          # ==================
+          if not os.path.exists(src_path):
+              raise FileNotFoundError(
+                  f"Cannot find source GIF: {src_path}"
+              )
 
-          src = Image.open(src_path)
+          # ==============================
+          # ANIMATION SETTINGS
+          # ==============================
 
-          # lấy tất cả frame từ gif gốc
-          raw_frames = []
-          durations = []
-          for fr in ImageSequence.Iterator(src):
-              rgba = fr.convert("RGBA")
-              raw_frames.append(rgba)
-              durations.append(fr.info.get("duration", step_duration))
+          canvas_w = 1200
 
-          if not raw_frames:
-              raise RuntimeError("No frames found in source gif.")
+          # vùng Doraemon chạy
+          canvas_h = 150
 
-          # resize toàn bộ frame
-          resized_frames = []
-          for fr in raw_frames:
-              ratio = target_h / fr.height
-              new_w = int(fr.width * ratio)
-              resized_frames.append(fr.resize((new_w, target_h), Image.LANCZOS))
+          # chiều cao Doraemon
+          doraemon_h = 125
 
-          sprite_w = resized_frames[0].width
-          max_x = max(0, canvas_w - sprite_w)
+          # số vị trí khi chạy một chiều
+          travel_steps = 45
 
-          # quỹ đạo đi: trái -> phải -> trái
-          forward_positions = [int(max_x * i / (steps_forward - 1)) for i in range(steps_forward)]
-          backward_positions = list(reversed(forward_positions[1:-1]))
+          # thời gian mỗi frame (ms)
+          frame_duration = 65
+
+          # khoảng cách trên
+          top_margin = 10
+
+          # khoảng cách 2 mép
+          side_margin = 10
+
+          # ==============================
+          # LOAD SOURCE GIF
+          # ==============================
+
+          source = Image.open(src_path)
+
+          source_frames = []
+
+          for frame in ImageSequence.Iterator(source):
+              frame = frame.convert("RGBA")
+
+              ratio = doraemon_h / frame.height
+
+              new_width = int(frame.width * ratio)
+
+              frame = frame.resize(
+                  (new_width, doraemon_h),
+                  Image.Resampling.LANCZOS
+              )
+
+              source_frames.append(frame)
+
+          if len(source_frames) == 0:
+              raise RuntimeError("Source GIF contains no frames.")
+
+          sprite_w = source_frames[0].width
+
+          left_x = side_margin
+          right_x = canvas_w - sprite_w - side_margin
+
+          # ==============================
+          # POSITIONS
+          # ==============================
+
+          positions_right = [
+              int(
+                  left_x +
+                  (right_x - left_x) *
+                  i /
+                  (travel_steps - 1)
+              )
+              for i in range(travel_steps)
+          ]
+
+          # Không lặp lại frame ngoài cùng
+          positions_left = list(
+              reversed(positions_right[1:-1])
+          )
 
           output_frames = []
-          output_durations = []
 
-          # helper lấy frame sprite theo index
-          def get_sprite(i, mirrored=False):
-              fr = resized_frames[i % len(resized_frames)]
-              if mirrored:
-                  fr = ImageOps.mirror(fr)
-              return fr
+          frame_index = 0
 
-          # đi sang phải: giữ nguyên hướng mặt sang phải
-          idx = 0
-          for x in forward_positions:
-              canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
-              sprite = get_sprite(idx, mirrored=False)
-              y = top_margin
-              canvas.alpha_composite(sprite, (x, y))
+          # ==============================
+          # LEFT -> RIGHT
+          # Doraemon giữ hướng ban đầu
+          # ==============================
+
+          for x in positions_right:
+
+              canvas = Image.new(
+                  "RGBA",
+                  (canvas_w, canvas_h),
+                  (0, 0, 0, 0)
+              )
+
+              sprite = source_frames[
+                  frame_index % len(source_frames)
+              ]
+
+              canvas.alpha_composite(
+                  sprite,
+                  (x, top_margin)
+              )
+
               output_frames.append(canvas)
-              output_durations.append(step_duration)
-              idx += 1
 
-          # quay lại sang trái: mirror để quay mặt về trái
-          for x in backward_positions:
-              canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
-              sprite = get_sprite(idx, mirrored=True)
-              y = top_margin
-              canvas.alpha_composite(sprite, (x, y))
+              frame_index += 1
+
+          # ==============================
+          # RIGHT -> LEFT
+          # FLIP Doraemon
+          # ==============================
+
+          for x in positions_left:
+
+              canvas = Image.new(
+                  "RGBA",
+                  (canvas_w, canvas_h),
+                  (0, 0, 0, 0)
+              )
+
+              sprite = source_frames[
+                  frame_index % len(source_frames)
+              ]
+
+              # FLIP NGANG
+              sprite = ImageOps.mirror(sprite)
+
+              canvas.alpha_composite(
+                  sprite,
+                  (x, top_margin)
+              )
+
               output_frames.append(canvas)
-              output_durations.append(step_duration)
-              idx += 1
 
-          # lưu gif
+              frame_index += 1
+
+          # ==============================
+          # SAVE GIF
+          # ==============================
+
           output_frames[0].save(
               out_path,
               save_all=True,
               append_images=output_frames[1:],
-              duration=output_durations,
+              duration=frame_duration,
               loop=0,
               disposal=2,
-              transparency=0
+              optimize=True
           )
 
-          print(f"Generated: {out_path}")
+          print("")
+          print("================================")
+          print("Doraemon animation generated!")
+          print("================================")
+          print(f"Source : {src_path}")
+          print(f"Output : {out_path}")
+          print(f"Frames : {len(output_frames)}")
+          print("================================")
           PY
 
-      - name: Commit generated gif
+      - name: Check generated file
+        run: |
+          ls -lh assets/
+          test -f assets/doraemon-run.gif
+
+      - name: Commit Doraemon animation
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add assets/doraemon-run.gif
-          git commit -m "Generate Doraemon running animation" || exit 0
+
+          git diff --cached --quiet || git commit -m "Update Doraemon animation"
+
           git push
